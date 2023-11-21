@@ -21,4 +21,12 @@ function addUser($nom, $email, $password) {
     return $requet->execute([$nom, $email, $password]);
 }
 
+function getUserByEmail($email){
+    $pdo = databaseConnection();
+    $requet = $pdo->prepare("SELECT * FROM `users` WHERE email = ?");
+    $requet->execute([$email]);
+    $user = $requet->fetchAll(PDO::FETCH_OBJ);
+    return $user;
+} 
+
 ?>

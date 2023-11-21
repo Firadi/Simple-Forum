@@ -3,7 +3,13 @@
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (isset($_POST['name'] ) && isset($_POST['password'] ) && isset($_POST['repassword'] ) && isset($_POST['email'] )) {
-            registreController($_POST['name'],$_POST['email'],$_POST['password'],$_POST['repassword']);
+            $error=registreController($_POST['name'],$_POST['email'],$_POST['password'],$_POST['repassword']);
+            if(!empty($error)){
+                session_start();
+                $_SESSION['errorRegister'] = $error;
+                header('Location: ../index.php?action=registre');
+            }
+            else header('Location: ../index.php?action=login');
         }
     }
 function passwordController($password, $repassword) {
@@ -27,7 +33,7 @@ function registreController($nom, $email, $password, $repassword) {
     else {
         return "passwords incomapatable";
     }
-    return $isAdd;
+    return "";
 }
 
 ?>

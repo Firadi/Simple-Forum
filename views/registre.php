@@ -17,10 +17,16 @@
                     <div class="row justify-content-center">
                     <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
 
-                        <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
+                        <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Register</p>
 
                         <form class="mx-1 mx-md-4" method="post" action="controllers/addUser.php">
-
+                        <?php if(isset($_SESSION['errorRegister']) ):
+                                
+                                ?>
+                                    <div class="alert alert-danger">
+                                        <?= $_SESSION['errorRegister'];?>
+                                    </div>
+                                <?php endif;?>
                             <div class="d-flex flex-row align-items-center mb-4">
                                 <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                                 <div class="form-outline flex-fill mb-0">
@@ -55,7 +61,7 @@
 
                             <div class="form-check d-flex justify-content-center mb-5">
                                 do you have an account? 
-                                <a class="form-check-label" for="form2Example3">
+                                <a href="index.php?action=login" class="form-check-label" for="form2Example3">
                                     login
                                 </a>
                             </div>
