@@ -1,8 +1,7 @@
 <?php
     
     include_once 'controllers/viewsController.php';
-
-    if (isset($_GET['action'])) {
+    if (isset($_GET['action'])&&isset($_SESSION['user'])) {
         $rooting = $_GET['action'];
         
         switch ($rooting) {
@@ -14,10 +13,15 @@
                 break;
             case 'home':
                 homeAction();
-                break;    
+                break;
+            case 'question':
+                questionAction();
+                break;        
             default:
-                echo 'root';
+                loginAction();
                 break;
         }
+    }else{
+        loginAction();
     }
 ?>

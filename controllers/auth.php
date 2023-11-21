@@ -23,6 +23,7 @@ function auth($email,$password){
             session_start();
             $_SESSION['user']['email']=$user[0]->email;
             $_SESSION['user']['nom']=$user[0]->nom;
+            $_SESSION['user']['id']=$user[0]->id;
             header('Location: ../index.php?action=home');
         }else return "password incorrect";
     }else return "user does not existe";
