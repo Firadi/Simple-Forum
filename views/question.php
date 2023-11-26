@@ -1,10 +1,4 @@
-
-
-
-
-<?php
-
-ob_start();?>
+<?php ob_start();?>
         <style> 
         body {
             margin-top: 20px;
@@ -29,9 +23,8 @@ ob_start();?>
     </style>
 <?php $style = ob_get_clean();?>
 
-<?php
-ob_start();?>
-        <div class="container">
+<?php ob_start();?>
+        
     <div class="row">
         <!-- Main content -->
         <div class="col-lg-12 mb-3">
@@ -89,7 +82,8 @@ ob_start();?>
             <!-- /End of Answers -->
         </div>
     </div>
-</div>
+
 <?php $content = ob_get_clean();?>
+
 <?php include_once 'layouts/layout.php'?>
 

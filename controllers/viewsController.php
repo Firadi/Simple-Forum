@@ -35,5 +35,8 @@ function questionAction(){
 function getNumOfResponse($id){
     return getNumberOfAnswers($id);
 }
-
+function logoutAction(){
+    include_once 'logout.php';
+    header('Location: index.php?action=login');
+}
 ?>

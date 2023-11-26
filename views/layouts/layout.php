@@ -8,9 +8,15 @@
     <?=$style?>
     <title>forum</title>
 </head>
-<body>
-    <?php require_once 'parties/navbar.php'?>
-    <?= $content?>
+<body class="m-0" style="background-color: #eee;">
+    <div class="container-fluid p-0 m-0">
+        <?php require_once 'views/parties/navbar.php'?>  
+    </div>
+
+    <div class="container">
+        <?= $content?>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="public/questions.js"></script>
 </body>
 </html>

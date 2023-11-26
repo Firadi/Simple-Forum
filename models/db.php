@@ -1,4 +1,6 @@
 <?php
+
+// Database Connection
 function databaseConnection(){
     return $pdo = new PDO("mysql: host=localhost; dbname=forum;","root", '');
 }
@@ -72,13 +74,13 @@ function getAnswers($question_id){
 }
 function addResponse($user_id, $question_id, $response) {
     $pdo = databaseConnection();
-    $date = date("Y-m-d");
+    $date = date("Y-m-d h:m:s");
     $requet = $pdo->prepare("INSERT INTO `reponses`( `user_id`, `question_id`, `response`, `date`) VALUES (?,?,?,?)");
     return $requet->execute([$user_id, $question_id, $response,$date]);
 }
 function addquestion($user_id, $question) {
     $pdo = databaseConnection();
-    $date = date("Y-m-d");
+    $date = date("Y-m-d h:m:s");
     $requet = $pdo->prepare("INSERT INTO `questions`( `user_id`, `question`, `date`) VALUES (?,?,?)");
     return $requet->execute([$user_id,$question,$date]);
 }

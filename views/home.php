@@ -28,9 +28,7 @@ ob_start();?>
 
 <?php
 ob_start();?>
-        <div class="container">
         <div class="row">
-            <!-- Main content -->
             <div class="col-lg-12 mb-3">
                 <form action="controllers/addQuestion.php" method="POST">
                     <div class="input-group mb-3 mt-3">
@@ -39,7 +37,7 @@ ob_start();?>
                         <button class="btn btn-primary" type="submit">send</button>
                     </div>
                 </form>
-                <div class="row text-left mb-5">
+                <!-- <div class="row text-left mb-5">
                     <div class="col-lg-6 mb-3 mb-sm-0">
                     <div class="dropdown bootstrap-select form-control form-control-lg bg-white bg-op-9 text-sm w-lg-50" style="width: 100%;">
                     <select class="form-control form-control-lg bg-white bg-op-9 text-sm w-lg-50" data-toggle="select" tabindex="-98">
@@ -60,8 +58,8 @@ ob_start();?>
                         </select>
                     </div>
                     </div>
-                </div>
-                <!-- End of post 1 -->
+                </div> -->
+                <div class="questions">
                 <?php foreach($questions as $question):?>
                     <div class="card row-hover pos-relative py-3 px-3 mb-3 border-warning border-top-0 border-right-0 border-bottom-0 rounded-0">
                         <div class="row align-items-center">
@@ -81,11 +79,11 @@ ob_start();?>
                         </div>
                     </div>
                 <?php endforeach;?>
-                    <!-- /End of post 1 -->
+                </div>
                 </div>
             
         </div>
-        </div>
+
 <?php $content = ob_get_clean();?>
 <?php include_once 'layouts/layout.php'?>
 
